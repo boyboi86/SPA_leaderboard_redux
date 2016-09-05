@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { alltimeFetch } from '../actions/index';
 
 class ALL_Times extends Component{
@@ -23,6 +24,7 @@ class ALL_Times extends Component{
   render(){
     return (
       <div>
+      <Link to="/recent" className="btn btn-primary pull-xs-right">See recent top scores</Link>
         <h2>All time point holders</h2>
         <ul className="list-group">
           { this.renderPosts() }
