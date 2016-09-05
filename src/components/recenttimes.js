@@ -9,11 +9,26 @@ class RECENT_Times extends Component{
     this.props.recentFetch();
   }
 
+  renderPosts(){
+    return this.props.posts.map((el, index) => {
+      return(
+        <li className="list-group-item" key={ index }>
+          <img src={ el.img }/>
+          <strong>{ el.username }</strong>
+          <span className="pull-xs-right">{ el.recent }</span>
+        </li>
+      )
+    })
+  }
+
   render(){
     return (
       <div>
         <Link to="/" className="btn btn-warning pull-xs-right">Back to top scores</Link>
         <h3>Recent high scores</h3>
+        <ul className="list-group">
+          { this.renderPosts() }
+        </ul>
       </div>
     )
   }
@@ -23,4 +38,8 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({ recentFetch }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(RECENT_Times);
+function mapStateToProps(state){
+  return { posts: state.posts.Rpost }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RECENT_Times);

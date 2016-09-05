@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-  return { posts: state.posts.post }
+  return { posts: state.posts.Apost }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ALL_Times);
