@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { alltimeFetch } from '../actions/index';
 
@@ -8,12 +8,27 @@ class ALL_Times extends Component{
     this.props.alltimeFetch();
   }
 
-  render(){
+  renderPosts(){
     return this.props.posts.map((el, index) => {
       return (
-        <div>{el.username}</div>
+        <li className="list-group-item" key={ index }>
+          <img src={ el.img } />
+          <strong>{ el.username }</strong>
+          <span className="pull-xs-right">{ el.alltime }</span>
+        </li>
       )
     })
+  }
+
+  render(){
+    return (
+      <div>
+        <h2>All time point holders</h2>
+        <ul className="list-group">
+          { this.renderPosts() }
+        </ul>
+      </div>
+    )
   }
 }
 
