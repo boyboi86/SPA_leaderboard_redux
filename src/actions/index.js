@@ -3,8 +3,8 @@ import axios from 'axios';
 const ALL_TIME_URL = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime';
 const RECENT_URL = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
 
-export ALL_TIME_FETCH = 'ALL_TIME_FETCH';
-export RECENT_FETCH = 'RECENT_FETCH';
+export const ALL_TIME_FETCH = 'ALL_TIME_FETCH';
+export const RECENT_FETCH = 'RECENT_FETCH';
 
 export function alltimeFetch(){
 
