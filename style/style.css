@@ -9,3 +9,13 @@ img {
   width: auto;
   margin-right: 5px;
 }
+
+.btn {
+  margin: inherit;
+  padding: auto;
+}
+
+ul {
+  margin-top: 5px;
+  padding-top: 5px;
+}
